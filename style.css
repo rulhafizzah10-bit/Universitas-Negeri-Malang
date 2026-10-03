@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bangun Ruang Sisi Lengkung</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Media Pembelajaran Kelas 9</p>
+          <h1>Bangun Ruang Sisi Lengkung</h1>
+        </div>
+        <button id="new-session-btn" class="primary-btn">Scan Kartu Baru</button>
+      </header>
+
+      <section class="card-hero">
+        <div class="card-qr-panel">
+          <div class="qr-card">
+            <div class="qr-header">
+              <span class="mini-badge">QR Learn</span>
+              <span id="shape-badge" class="shape-badge">Kerucut</span>
+            </div>
+            <div id="qr-code" class="qr-code" aria-label="Kode QR kartu"></div>
+            <div class="qr-meta">
+              <strong>ID Sesi</strong>
+              <span id="session-id">SCAN-0001</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-info-panel">
+          <p class="label">Tujuan</p>
+          <h2>Zoom ke bagian bangun lalu pahami konsep dan rumusnya.</h2>
+          <ul>
+            <li>Alas, tinggi, selimut, dan garis pelukis dapat diperbesar.</li>
+            <li>Rumus muncul saat bagian tertentu dipilih.</li>
+            <li>Latihan soal berubah setiap kali kartu di-scan.</li>
+          </ul>
+        </div>
+      </section>
+
+      <main class="workspace">
+        <section class="model-panel">
+          <div class="shape-switcher" id="shape-switcher">
+            <button class="shape-tab active" data-shape="kerucut">Kerucut</button>
+            <button class="shape-tab" data-shape="tabung">Tabung</button>
+            <button class="shape-tab" data-shape="bola">Bola</button>
+          </div>
+
+          <div class="shape-stage">
+            <div id="shape-model" class="shape-model kerucut" aria-live="polite">
+              <button class="hotspot hotspot-alas" data-part="alas" title="Alas">
+                <span>Alas</span>
+              </button>
+              <button class="hotspot hotspot-tinggi" data-part="tinggi" title="Tinggi">
+                <span>Tinggi</span>
+              </button>
+              <button class="hotspot hotspot-selimut" data-part="selimut" title="Selimut">
+                <span>Selimut</span>
+              </button>
+              <button class="hotspot hotspot-garis" data-part="garis" title="Garis pelukis">
+                <span>Garis</span>
+              </button>
+              <button class="hotspot hotspot-volume" data-part="volume" title="Volume">
+                <span>Volume</span>
+              </button>
+              <button class="hotspot hotspot-luas" data-part="luas" title="Luas permukaan">
+                <span>Luas</span>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <aside class="concept-panel">
+          <p class="label">Konsep terpilih</p>
+          <h3 id="concept-title">Alas</h3>
+          <div class="concept-box">
+            <p id="concept-text"></p>
+          </div>
+
+          <div class="formula-box">
+            <p class="formula-label">Rumus</p>
+            <p id="formula-text" class="formula-text"></p>
+          </div>
+
+          <div class="formula-box secondary">
+            <p class="formula-label">Penjelasan singkat</p>
+            <p id="explanation-text"></p>
+          </div>
+        </aside>
+      </main>
+
+      <section class="quiz-panel">
+        <div class="quiz-header">
+          <div>
+            <p class="label">Latihan soal</p>
+            <h3>Soal acak per scan</h3>
+          </div>
+          <div class="progress-indicator">
+            <span id="question-counter">1/5</span>
+          </div>
+        </div>
+
+        <div id="quiz-box" class="quiz-box">
+          <p id="question-text" class="question-text"></p>
+          <div id="choices" class="choices"></div>
+        </div>
+
+        <div id="feedback-box" class="feedback-box hidden"></div>
+      </section>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
+
